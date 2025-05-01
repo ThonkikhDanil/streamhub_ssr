@@ -9,8 +9,6 @@ class WelcomeController extends Controller
 {
 	public function __invoke()
 	{
-		$title = 'Главная';
-
-		return Inertia::render('Welcome', compact('title'));
+		return Inertia::render('Welcome');
 	}
 }

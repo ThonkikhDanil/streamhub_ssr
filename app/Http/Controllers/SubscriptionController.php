@@ -9,8 +9,6 @@ class SubscriptionController extends Controller
 {
 	public function __invoke()
 	{
-		$title = 'Подписки';
-
-		return Inertia::render('Subscriptions', compact('title'));
+		return Inertia::render('Subscriptions');
 	}
 }
