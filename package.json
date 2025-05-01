@@ -30,5 +30,9 @@
         "vite": "^6.2.4",
         "vue": "^3.4.0",
         "vue-tsc": "^2.0.24"
+    },
+    "dependencies": {
+        "@flaticon/flaticon-uicons": "^3.3.1",
+        "@vueuse/core": "^12.8.2"
     }
 }
