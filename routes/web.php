@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\SubscriptionController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', WelcomeController::class)->name('welcome');
+Route::get('/subscriptions', SubscriptionController::class)->name('subscriptions');
 
 Route::get('/dashboard', function () {
 	return Inertia::render('Dashboard');

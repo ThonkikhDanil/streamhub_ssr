@@ -4,8 +4,8 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-	<Head title="Главная" />
+	<Head title="Подписки" />
 	<Layout>
-		<p class="m-4">Hello World!</p>
+		<p class="m-4">Тут пока ничего нет</p>
 	</Layout>
 </template>
