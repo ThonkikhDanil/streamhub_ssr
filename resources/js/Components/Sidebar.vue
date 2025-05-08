@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NavLink from '@/Components/NavLink.vue';
 import { SidebarKey } from '@/keys';
-import { inject } from 'vue';
+import { inject, Transition } from 'vue';
 
 const sidebar = inject(SidebarKey);
 
@@ -38,9 +38,27 @@ const { isSidebar, toggleSidebar } = sidebar;
 		</NavLink>
 	</div>
 
-	<div
-		@click="toggleSidebar()"
-		class="fixed w-screen h-screen transition-all duration-500 ease-out bg-transparent"
-		:class="{ 'bg-black/35': isSidebar }"
-	></div>
+	<Transition name="overlay">
+		<div
+			v-if="isSidebar"
+			@click="toggleSidebar()"
+			class="fixed h-screen w-screen bg-black/35"
+		></div>
+	</Transition>
 </template>
+
+<style>
+.overlay-enter-active,
+.overlay-leave-active {
+	transition: opacity 0.5s ease-out;
+}
+
+.overlay-enter-from,
+.overlay-leave-to {
+	opacity: 0;
+}
+
+.overlay-leave-active {
+	pointer-events: none;
+}
+</style>
