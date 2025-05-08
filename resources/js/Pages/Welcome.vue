@@ -6,6 +6,6 @@ import { Head } from '@inertiajs/vue3';
 <template>
 	<Head title="Главная" />
 	<Layout>
-		<p class="m-4">Hello World!</p>
+		<p class="m-4 dark:text-white">Hello World!</p>
 	</Layout>
 </template>

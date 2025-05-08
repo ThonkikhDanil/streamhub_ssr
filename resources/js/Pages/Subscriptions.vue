@@ -6,6 +6,6 @@ import { Head } from '@inertiajs/vue3';
 <template>
 	<Head title="Подписки" />
 	<Layout>
-		<p class="m-4">Тут пока ничего нет</p>
+		<p class="m-4 dark:text-white">Тут пока ничего нет</p>
 	</Layout>
 </template>

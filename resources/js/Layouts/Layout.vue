@@ -14,7 +14,7 @@ provide(SidebarKey, { isSidebar, toggleSidebar });
 </script>
 
 <template>
-	<div class="min-h-screen">
+	<div class="min-h-screen bg-cyan-100 dark:bg-slate-950">
 		<Header />
 		<Sidebar />
 		<slot />
