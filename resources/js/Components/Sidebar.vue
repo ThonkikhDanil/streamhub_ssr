@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NavLink from '@/Components/NavLink.vue';
 import { SidebarKey } from '@/keys';
-import { inject, Transition } from 'vue';
+import { inject } from 'vue';
 
 const sidebar = inject(SidebarKey);
 
@@ -14,7 +14,7 @@ const { isSidebar, toggleSidebar } = sidebar;
 
 <template>
 	<div
-		class="absolute left-[-192px] z-20 flex h-screen flex-col bg-[#D5F2F2] transition-transform duration-500 ease-out dark:bg-[#010326]"
+		class="fixed left-[-192px] z-20 flex h-screen flex-col bg-[#D5F2F2] transition-transform duration-500 ease-out dark:bg-[#010326]"
 		:class="{ 'translate-x-48': isSidebar }"
 	>
 		<NavLink
@@ -43,7 +43,7 @@ const { isSidebar, toggleSidebar } = sidebar;
 			v-if="isSidebar"
 			@click="toggleSidebar()"
 			class="fixed h-screen w-screen bg-black/35"
-		></div>
+		/>
 	</Transition>
 </template>
 
