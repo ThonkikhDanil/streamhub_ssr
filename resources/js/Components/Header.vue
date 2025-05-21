@@ -4,6 +4,12 @@ import LoginButton from '@/Components/LoginButton.vue';
 import SearchRow from '@/Components/SearchRow.vue';
 import ToggleDarkThemeButton from '@/Components/ToggleDarkThemeButton.vue';
 import ToggleSidebarButton from '@/Components/ToggleSidebarButton.vue';
+import { usePage } from '@inertiajs/vue3';
+import { computed } from 'vue';
+import UserDropdown from './UserDropdown.vue';
+
+const page = usePage();
+const user = computed(() => page.props.auth.user);
 </script>
 
 <template>
@@ -18,6 +24,7 @@ import ToggleSidebarButton from '@/Components/ToggleSidebarButton.vue';
 			<ApplicationLogo />
 		</div>
 		<SearchRow />
-		<LoginButton />
+		<UserDropdown v-if="user" />
+		<LoginButton v-else />
 	</div>
 </template>
