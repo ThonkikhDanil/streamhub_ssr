@@ -5,6 +5,7 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
 const props = defineProps<{
+	title: string;
 	status?: string;
 }>();
 
@@ -20,8 +21,12 @@ const verificationLinkSent = computed(
 </script>
 
 <template>
-	<Head title="Email Verification" />
+	<Head :title="title" />
 	<Layout>
+		<template #title>
+			{{ title }}
+		</template>
+
 		<div
 			class="mx-auto mt-10 w-full overflow-hidden bg-[#D5F2F2] px-6 py-4 shadow-md dark:bg-[#010326] sm:max-w-md sm:rounded-lg"
 		>

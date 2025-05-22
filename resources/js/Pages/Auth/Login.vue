@@ -8,6 +8,7 @@ import Layout from '@/Layouts/Layout.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 defineProps<{
+	title: string;
 	canResetPassword?: boolean;
 	status?: string;
 }>();
@@ -28,8 +29,12 @@ const submit = () => {
 </script>
 
 <template>
-	<Head title="Log in" />
+	<Head :title="title" />
 	<Layout>
+		<template #title>
+			{{ title }}
+		</template>
+
 		<div
 			class="mx-auto mt-10 w-full overflow-hidden bg-[#D5F2F2] px-6 py-4 shadow-md dark:bg-[#010326] sm:max-w-md sm:rounded-lg"
 		>

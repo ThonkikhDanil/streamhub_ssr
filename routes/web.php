@@ -11,7 +11,9 @@ Route::get('/', WelcomeController::class)->name('welcome');
 Route::get('/subscriptions', SubscriptionController::class)->name('subscriptions');
 
 Route::get('/dashboard', function () {
-	return Inertia::render('Dashboard');
+	return Inertia::render('Dashboard', [
+		'title' => 'Dashboard',
+	]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

@@ -7,6 +7,7 @@ import Layout from '@/Layouts/Layout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 
 defineProps<{
+	title: string;
 	status?: string;
 }>();
 
@@ -20,8 +21,12 @@ const submit = () => {
 </script>
 
 <template>
-	<Head title="Forgot Password" />
+	<Head :title="title" />
 	<Layout>
+		<template #title>
+			{{ title }}
+		</template>
+
 		<div
 			class="mx-auto mt-10 w-full overflow-hidden bg-[#D5F2F2] px-6 py-4 shadow-md dark:bg-[#010326] sm:max-w-md sm:rounded-lg"
 		>
