@@ -1,19 +1,17 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
 	<form action="" class="flex">
 		<input
 			type="text"
-			class="w-96 bg-[#D5F2F2] dark:bg-[#010326] text-[#010326] dark:text-[#D5F2F2] rounded-s-2xl border-2 border-[#202020] border-r-0"
+			class="w-96 rounded-s-2xl border-2 border-r-0 border-[#202020] bg-[#D5F2F2] text-[#010326] dark:border-[#D5F2F2] dark:bg-[#010326] dark:text-[#D5F2F2]"
 			placeholder="Введите запрос"
 		/>
 		<button
 			type="submit"
-			class="bg-[#010326] dark:bg-[#D5F2F2] hover:bg-[#116EBF] dark:hover:bg-[#1F82BF] transition-all text-2xl py-1 px-8 rounded-e-2xl"
+			class="rounded-e-2xl bg-[#010326] px-8 py-1 text-2xl transition-all hover:bg-[#116EBF] dark:bg-[#D5F2F2] dark:hover:bg-[#1F82BF]"
 		>
-			<span class="text-[#D5F2F2] dark:text-[#010326] relative top-1">
+			<span class="relative top-1 text-[#D5F2F2] dark:text-[#010326]">
 				<i class="fi fi-br-search" />
 			</span>
 		</button>

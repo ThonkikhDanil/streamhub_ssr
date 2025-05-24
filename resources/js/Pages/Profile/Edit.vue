@@ -13,7 +13,7 @@ defineProps<{
 </script>
 
 <template>
-	<Head title="Profile" />
+	<Head :title="title" />
 	<Layout>
 		<template #title>
 			{{ title }}

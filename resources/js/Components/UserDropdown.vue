@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import Dropdown from '@/Components/Dropdown.vue';
+import DropdownLink from '@/Components/DropdownLink.vue';
 import { usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
-import Dropdown from './Dropdown.vue';
-import DropdownLink from './DropdownLink.vue';
 
 const page = usePage();
 const user = computed(() => page.props.auth.user);
@@ -11,10 +11,10 @@ const user = computed(() => page.props.auth.user);
 <template>
 	<Dropdown align="right" width="48">
 		<template #trigger>
-			<span class="inline-flex rounded-md">
+			<span class="inline-flex rounded-2xl">
 				<button
 					type="button"
-					class="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+					class="inline-flex items-center rounded-2xl border border-transparent px-4 py-2 font-semibold leading-4 text-[#010326] transition duration-150 ease-in-out hover:bg-[#116EBF] hover:text-[#D5F2F2] focus:outline-none dark:text-[#D5F2F2] dark:hover:bg-[#1F82BF] dark:hover:text-[#010326]"
 				>
 					{{ user.name }}
 
