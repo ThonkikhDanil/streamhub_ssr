@@ -22,6 +22,7 @@ return new class extends Migration
             $table->bigInteger('size');
             $table->integer('duration')->nullable();
             $table->unsignedBigInteger('uploaded_by')->nullable();
+			$table->string('preview')->nullable();
 
             $table->timestamps();
 

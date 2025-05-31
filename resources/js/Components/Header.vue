@@ -5,11 +5,16 @@ import SearchRow from '@/Components/SearchRow.vue';
 import ToggleDarkThemeButton from '@/Components/ToggleDarkThemeButton.vue';
 import ToggleSidebarButton from '@/Components/ToggleSidebarButton.vue';
 import UserDropdown from '@/Components/UserDropdown.vue';
-import { usePage } from '@inertiajs/vue3';
-import { computed } from 'vue';
+import { UserKey } from '@/keys';
+import { inject } from 'vue';
 
-const page = usePage();
-const user = computed(() => page.props.auth.user);
+const findUser = inject(UserKey);
+
+if (!findUser) {
+	throw new Error('User context is not provided');
+}
+
+const { user } = findUser;
 </script>
 
 <template>

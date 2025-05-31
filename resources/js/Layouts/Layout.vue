@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import Header from '@/Components/Header.vue';
 import Sidebar from '@/Components/Sidebar.vue';
-import { SidebarKey } from '@/keys';
-import { provide, ref } from 'vue';
+import { SidebarKey, UserKey } from '@/keys';
+import { usePage } from '@inertiajs/vue3';
+import { computed, provide, ref } from 'vue';
+
+const page = usePage();
+const user = computed(() => page.props.auth.user);
 
 const isSidebar = ref(false);
 
@@ -10,6 +14,7 @@ function toggleSidebar() {
 	isSidebar.value = !isSidebar.value;
 }
 
+provide(UserKey, { user });
 provide(SidebarKey, { isSidebar, toggleSidebar });
 </script>
 
