@@ -16,6 +16,7 @@ class Video extends Model
         'size',
         'duration',
         'uploaded_by',
+        'preview',
     ];
 
     public function user(): BelongsTo

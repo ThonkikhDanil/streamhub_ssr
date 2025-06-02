@@ -46,7 +46,7 @@ class VideoController extends Controller
 	    ]);
 
 	    $file = $request->file('video');
-	    $path = $file->store('public/videos');
+	    $path = $file->store('videos', 'public');
 
 	    $ffmpeg = FFMpeg::create();
 	    $video = $ffmpeg->open(Storage::path($path));
@@ -54,15 +54,21 @@ class VideoController extends Controller
 	    $duration = $ffprobe
 	        ->format(Storage::path($path))
 	        ->get('duration');
+		$time = min(1, floor($duration / 2));
 
 	    $previewPath = null;
 
 	    if ($request->hasFile('preview')) {
 	        $previewFile = $request->file('preview');
-	        $previewPath = $previewFile->store('public/previews');
+	        $previewPath = $previewFile->store('previews', 'public');
 	    } else {
-	        $framePath = 'public/previews/' . Str::random(40) . '.jpg';
-	        $video->frame(TimeCode::fromSeconds(5))->save(Storage::path($framePath));
+	        $framePath = 'previews/' . Str::random(40) . '.jpg';
+			$fullFramePath = Storage::path($framePath);
+
+			if (!file_exists(dirname($fullFramePath))) {
+			    mkdir(dirname($fullFramePath), 0755, true);
+			}
+	        $video->frame(TimeCode::fromSeconds($time))->save($fullFramePath);
 	        $previewPath = $framePath;
 	    }
 
@@ -86,7 +92,7 @@ class VideoController extends Controller
         return inertia::render('Videos/Show', [
 			'title' => $video->title,
             'video' => $video,
-            'videoUrl' => Storage::url($video->path),
+            'videoUrl' => '/storage/' . ltrim($video->path, '/'),
         ]);
     }
 

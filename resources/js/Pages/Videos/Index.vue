@@ -30,9 +30,9 @@ defineProps<{
 				>
 					<div
 						v-if="videos.data.length === 0"
-						class="text-base font-semibold leading-tight text-gray-800 dark:text-gray-200"
+						class="flex items-center text-base font-semibold leading-tight text-gray-800 dark:text-gray-200"
 					>
-						У вас пока нет видео.
+						<div class="mr-4">У вас пока нет видео.</div>
 					</div>
 					<div
 						v-else
@@ -66,7 +66,7 @@ defineProps<{
 										Смотреть
 									</Link>
 									<Link
-										:href="`/videos/${video.id}/edit`"
+										:href="route('videos.show', video.id)"
 										class="text-yellow-500 hover:underline"
 									>
 										Редактировать
@@ -75,6 +75,12 @@ defineProps<{
 							</div>
 						</div>
 					</div>
+					<Link
+						:href="route('videos.create')"
+						class="mt-4 rounded-sm bg-yellow-300 p-2 text-gray-200 dark:text-gray-800"
+					>
+						Загрузить видео
+					</Link>
 				</div>
 			</div>
 		</div>
