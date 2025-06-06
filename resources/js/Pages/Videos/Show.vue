@@ -27,7 +27,7 @@ defineProps<{
 			:src="videoUrl"
 			controls
 			preload="metadata"
-			class="m-6 w-max rounded-lg shadow-lg"
+			class="m-6 w-1/2 rounded-lg shadow-lg"
 		>
 			Your browser does not support the video tag.
 		</video>

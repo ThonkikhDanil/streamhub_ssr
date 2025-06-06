@@ -10,7 +10,7 @@ class WelcomeController extends Controller
 {
 	public function __invoke()
 	{
-	    $videos = Video::inRandomOrder()->get();
+	    $videos = Video::inRandomOrder()->with('user')->get();
 
 		return Inertia::render('Welcome', [
 			'title' => 'Главная',

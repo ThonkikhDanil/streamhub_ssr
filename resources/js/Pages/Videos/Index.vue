@@ -41,7 +41,7 @@ defineProps<{
 						<div
 							v-for="video in videos.data"
 							:key="video.id"
-							class="overflow-hidden rounded-xl bg-white shadow"
+							class="overflow-hidden rounded-xl bg-[#D5F2F2] shadow dark:bg-[#010326]"
 						>
 							<img
 								v-if="video.preview"
@@ -51,7 +51,9 @@ defineProps<{
 							/>
 
 							<div class="space-y-2 p-4">
-								<h2 class="text-xl font-semibold">
+								<h2
+									class="text-xl font-semibold text-[#010326] dark:text-[#D5F2F2]"
+								>
 									{{ video.title }}
 								</h2>
 								<p class="line-clamp-3 text-sm text-gray-600">
@@ -75,13 +77,13 @@ defineProps<{
 							</div>
 						</div>
 					</div>
-					<Link
-						:href="route('videos.create')"
-						class="mt-4 rounded-sm bg-yellow-300 p-2 text-gray-200 dark:text-gray-800"
-					>
-						Загрузить видео
-					</Link>
 				</div>
+				<Link
+					:href="route('videos.create')"
+					class="mt-4 block w-36 rounded-sm bg-yellow-300 p-2 text-gray-200 dark:text-gray-800"
+				>
+					Загрузить видео
+				</Link>
 			</div>
 		</div>
 	</Layout>
