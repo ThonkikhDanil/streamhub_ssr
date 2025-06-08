@@ -54,7 +54,7 @@ class VideoController extends Controller
 	    $duration = $ffprobe
 	        ->format(Storage::path($path))
 	        ->get('duration');
-		$time = min(1, floor($duration / 2));
+		$time = max(1, floor($duration / 2));
 
 	    $previewPath = null;
 
@@ -98,8 +98,6 @@ class VideoController extends Controller
 
 	public function destroy(Video $video)
     {
-        $this->authorize('delete', $video);
-
         Storage::disk('public')->delete($video->path);
         $video->delete();
 

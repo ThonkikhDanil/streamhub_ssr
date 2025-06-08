@@ -62,16 +62,20 @@ defineProps<{
 
 								<div class="mt-4 flex justify-between text-sm">
 									<Link
-										:href="`/videos/${video.id}`"
+										:href="route('videos.show', video.id)"
 										class="text-blue-500 hover:underline"
 									>
 										Смотреть
 									</Link>
 									<Link
-										:href="route('videos.show', video.id)"
-										class="text-yellow-500 hover:underline"
+										:href="
+											route('videos.destroy', video.id)
+										"
+										method="delete"
+										class="text-red-500 hover:underline"
+										as="button"
 									>
-										Редактировать
+										Удалить
 									</Link>
 								</div>
 							</div>
