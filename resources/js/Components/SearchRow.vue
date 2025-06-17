@@ -1,8 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useForm } from '@inertiajs/vue3';
+
+defineProps<{
+	status?: string;
+}>();
+
+const form = useForm({
+	search: '',
+});
+
+function submit() {
+	if (!form.search || form.search.trim() === '') {
+		return;
+	}
+	form.post(route('search'));
+}
+</script>
 
 <template>
-	<form action="" class="flex">
+	<form @submit.prevent="submit" class="flex">
 		<input
+			v-model="form.search"
 			type="text"
 			class="w-96 rounded-s-2xl border-2 border-r-0 border-[#202020] bg-[#D5F2F2] text-[#010326] dark:border-[#D5F2F2] dark:bg-[#010326] dark:text-[#D5F2F2]"
 			placeholder="Введите запрос"

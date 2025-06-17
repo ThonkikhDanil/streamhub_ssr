@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +11,7 @@ use Inertia\Inertia;
 
 Route::get('/', WelcomeController::class)->name('welcome');
 Route::get('/subscriptions', SubscriptionController::class)->name('subscriptions');
+Route::post('/search', SearchController::class)->name('search');
 
 Route::get('/dashboard', function () {
 	return Inertia::render('Dashboard', [
