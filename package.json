@@ -34,6 +34,8 @@
     "dependencies": {
         "@flaticon/flaticon-uicons": "^3.3.1",
         "@vueuse/core": "^12.8.2",
-        "prettier-eslint": "^16.4.1"
+        "media-icons": "^1.1.5",
+        "prettier-eslint": "^16.4.1",
+        "vidstack": "^1.12.13"
     }
 }

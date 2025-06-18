@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
-import { usePage } from '@inertiajs/vue3';
-import { computed } from 'vue';
+import { UserKey } from '@/keys';
+import { inject } from 'vue';
 
-const page = usePage();
-const user = computed(() => page.props.auth.user);
+const findUser = inject(UserKey);
+
+if (!findUser) {
+	throw new Error('User context is not provided');
+}
+
+const { user } = findUser;
 </script>
 
 <template>
@@ -35,7 +40,11 @@ const user = computed(() => page.props.auth.user);
 		</template>
 
 		<template #content>
+			<DropdownLink :href="route('dashboard')"> Dashboard </DropdownLink>
 			<DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
+			<DropdownLink :href="route('videos.index')">
+				My Videos
+			</DropdownLink>
 			<DropdownLink :href="route('logout')" method="post" as="button">
 				Log Out
 			</DropdownLink>
