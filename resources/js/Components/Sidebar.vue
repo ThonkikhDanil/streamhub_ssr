@@ -27,7 +27,7 @@ const { isSidebar, toggleSidebar } = sidebar;
 			</div>
 			<div>Главная</div>
 		</NavLink>
-		<NavLink
+		<!-- <NavLink
 			:href="route('subscriptions')"
 			:active="route().current('subscriptions')"
 		>
@@ -35,7 +35,7 @@ const { isSidebar, toggleSidebar } = sidebar;
 				<i class="fi fi-br-folder" />
 			</div>
 			<div>Подписки</div>
-		</NavLink>
+		</NavLink> -->
 	</div>
 
 	<Transition name="overlay">

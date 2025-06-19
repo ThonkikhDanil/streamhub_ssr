@@ -15,7 +15,7 @@ Route::post('/search', SearchController::class)->name('search');
 
 Route::get('/dashboard', function () {
 	return Inertia::render('Dashboard', [
-		'title' => 'Dashboard',
+		'title' => 'Статус',
 	]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 

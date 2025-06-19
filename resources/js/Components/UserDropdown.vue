@@ -40,13 +40,13 @@ const { user } = findUser;
 		</template>
 
 		<template #content>
-			<DropdownLink :href="route('dashboard')"> Dashboard </DropdownLink>
-			<DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
+			<!-- <DropdownLink :href="route('dashboard')"> Dashboard </DropdownLink> -->
+			<DropdownLink :href="route('profile.edit')"> Профиль </DropdownLink>
 			<DropdownLink :href="route('videos.index')">
-				My Videos
+				Мои видео
 			</DropdownLink>
 			<DropdownLink :href="route('logout')" method="post" as="button">
-				Log Out
+				Выйти
 			</DropdownLink>
 		</template>
 	</Dropdown>

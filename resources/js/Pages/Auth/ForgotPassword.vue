@@ -30,10 +30,15 @@ const submit = () => {
 		<div
 			class="mx-auto mt-10 w-full overflow-hidden bg-[#D5F2F2] px-6 py-4 shadow-md dark:bg-[#010326] sm:max-w-md sm:rounded-lg"
 		>
-			<div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+			<!-- <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
 				Forgot your password? No problem. Just let us know your email
 				address and we will email you a password reset link that will
 				allow you to choose a new one.
+			</div> -->
+			<div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+				Забыли пароль? Нет проблем. Просто сообщите нам свой адрес
+				электронной почты, и мы отправим вам ссылку для сброса пароля,
+				которая позволит вам выбрать новый.
 			</div>
 
 			<div
@@ -45,7 +50,7 @@ const submit = () => {
 
 			<form @submit.prevent="submit">
 				<div>
-					<InputLabel for="email" value="Email" />
+					<InputLabel for="email" value="Электронная почта" />
 
 					<TextInput
 						id="email"
@@ -65,7 +70,7 @@ const submit = () => {
 						:class="{ 'opacity-25': form.processing }"
 						:disabled="form.processing"
 					>
-						Email Password Reset Link
+						Отправить ссылку для сброса пароля
 					</PrimaryButton>
 				</div>
 			</form>
