@@ -22,7 +22,7 @@ function submit() {
 		<input
 			v-model="form.search"
 			type="text"
-			class="w-96 rounded-s-2xl border-2 border-r-0 border-[#202020] bg-[#D5F2F2] text-[#010326] dark:border-[#D5F2F2] dark:bg-[#010326] dark:text-[#D5F2F2]"
+			class="w-full rounded-s-2xl border-2 border-r-0 border-[#202020] bg-[#D5F2F2] text-[#010326] dark:border-[#D5F2F2] dark:bg-[#010326] dark:text-[#D5F2F2] lg:w-96"
 			placeholder="Введите запрос"
 		/>
 		<button

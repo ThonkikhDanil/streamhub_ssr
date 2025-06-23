@@ -42,7 +42,7 @@ const { isSidebar, toggleSidebar } = sidebar;
 		<div
 			v-if="isSidebar"
 			@click="toggleSidebar()"
-			class="fixed h-screen w-screen bg-black/35"
+			class="fixed z-10 h-screen w-screen bg-black/35"
 		/>
 	</Transition>
 </template>

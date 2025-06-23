@@ -23,7 +23,7 @@ defineProps<{
 			{{ title }}
 		</template>
 
-		<div class="py-12">
+		<div class="pb-12">
 			<div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
 				<div
 					class="bg-white p-4 shadow dark:bg-gray-800 sm:rounded-lg sm:p-8"
@@ -84,7 +84,7 @@ defineProps<{
 				</div>
 				<Link
 					:href="route('videos.create')"
-					class="mt-4 block w-36 rounded-sm bg-yellow-300 p-2 text-gray-200 dark:text-gray-800"
+					class="m-4 block w-36 rounded-sm bg-yellow-300 p-2 text-gray-800 sm:ml-0"
 				>
 					Загрузить видео
 				</Link>
